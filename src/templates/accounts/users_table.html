@@ -80,7 +80,7 @@
 							  <tbody>
 							  	{% for emp in employees %}
 							  	<tr>
-								      <td>{{emp.user.username}}</td>
+								      <td>{{emp.username}}</td>
  								      <td>{{ emp.department }}</td>
 								      {% if emp.user.is_active %}
 								      <td>active</td>
@@ -94,7 +94,7 @@
 								      {% elif emp.user.is_active %}
 								      <td><a href="{% url 'accounts:userblock' emp.user.id %}" title="block user"><i class="pe-7s-unlock"></i></a></td>
 								      {% else %}
-								      <td><a href="{% url 'accounts:userunblock' emp.user.id %}" title="unblock user"><i class="pe-7s-lock"></i></a></td>
+								      <td><a href="{% url 'accounts:userunblock' emp.id %}" title="unblock user"><i class="pe-7s-lock"></i></a></td>
 								      {% endif %}
 
 

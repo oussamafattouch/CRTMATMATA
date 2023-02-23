@@ -91,10 +91,9 @@ def dashboard_employees_create(request):
 		form = EmployeeCreateForm(request.POST,request.FILES)
 		if form.is_valid():
 			instance = form.save(commit = False)
-			user = request.POST.get('user')
-			assigned_user = User.objects.get(id = user)
+		 
 
-			instance.user = assigned_user
+			 
 
 			instance.title = request.POST.get('title')
 			instance.image = request.FILES.get('image')
@@ -175,10 +174,7 @@ def employee_edit_data(request,id):
 		if form.is_valid():
 			instance = form.save(commit = False)
 
-			user = request.POST.get('user')
-			assigned_user = User.objects.get(id = user)
-
-			instance.user = assigned_user
+			 
 
 			instance.title = request.POST.get('title')
 			instance.image = request.FILES.get('image')

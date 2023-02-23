@@ -10,8 +10,6 @@ urlpatterns = [
     path('create-user/',views.register_user_view,name='register'),
     path('user/change-password/',views.changepassword,name='changepassword'),
     path('user/profile/view/',views.user_profile_view,name='userprofile'),
-   
-
     #Users Views
     path('users/all',views.users_list,name='users'),
     path('users/<int:id>/block',views.users_block,name='userblock'),

@@ -143,7 +143,7 @@ class Logspe(APIView):
         login(request, user)
         if not serializer.is_valid():
             return Response({'serializer': serializer, 'user': user})
-        return redirect('index')
+        return redirect('/dashboard/employees/all/')
     
 
 

@@ -235,8 +235,8 @@
 							      <th scope="col">#</th>
 							      <th scope="col">Nom</th>
 								  <th scope="col">Prénom</th>
-							      <th scope="col">Role</th>
-							      <th scope="col">Department</th>
+							      <th scope="col">Numéro</th>
+							      <th scope="col">Addresse</th>
 							      <th scope="col">Status</th>
 							      <th scope="col">Actions</th>
 							    </tr>
@@ -252,8 +252,8 @@
 							      {% endif %}
 								  <td>{{ employee.lastname }}</td>
 							      <td>{{ employee.firstname }}</td>
-							      <td>{{ employee.role }}</td>
-							      <td>{{ employee.department }}</td>
+							      <td>{{ employee.id}}</td>
+							      <td>{{ employee.address }}</td>
 
 							      {% if employee.is_blocked %}
 							      <td>Inactive</td>

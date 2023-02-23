@@ -372,7 +372,7 @@ class Employee(models.Model):
 
 
     # PERSONAL DATA
-    user = models.ForeignKey(User,on_delete=models.CASCADE,default=1)
+    
     title = models.CharField(_('Title'),max_length=5,default=MR,choices=TITLE,blank=False,null=True)
     image = models.FileField(_('Profile Image'),upload_to='profiles',default='default.png',blank=True,null=True,help_text='upload image size less than 2.0MB')#work on path username-date/image
     firstname = models.CharField(_('Firstname'),max_length=125,null=False,blank=False)
@@ -380,7 +380,7 @@ class Employee(models.Model):
   
     sex = models.CharField(_('Gender'),max_length=9,default=Monsieur,choices=GENDER,blank=False)
     email = models.CharField(_('Email (optional)'),max_length=255,default=None,blank=True,null=True)
-    tel = PhoneNumberField(default='+21650000000', null = False, blank=False, verbose_name='Phone Number (Example +233240000000)', help_text= 'Enter number with Country Code Eg. +233240000000')
+    tel = PhoneNumberField(default='+21650000000', null = False, blank=False, verbose_name='Phone Number (Example +21650000000)', help_text= 'Enter number with Country Code Eg. +233240000000')
    
     birthday = models.DateField(_('Birthday'),blank=False,null=False)
   
@@ -426,13 +426,13 @@ class Employee(models.Model):
         fullname = ''
         firstname = self.firstname
         lastname = self.lastname
-        othername = self.othername
+        
 
-        if (firstname and lastname) or othername is None:
+        if (firstname and lastname) is None:
             fullname = firstname +' '+ lastname
             return fullname
-        elif othername:
-            fullname = firstname + ' '+ lastname +' '+othername
+        else:
+            fullname = firstname + ' '+ lastname +' '
             return fullname
         return
 
